@@ -1,5 +1,6 @@
 /** @format */
 
+
 //the variables assigned to the player choices in the DOM
 const player = document.getElementById("player");
 const computer = document.getElementById("computer");
