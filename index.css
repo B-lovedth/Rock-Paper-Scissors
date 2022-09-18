@@ -28,9 +28,7 @@ body::before{
 .content {
   margin: 5rem 0;
 }
-
 .main {
-  max-width: 30%;
   margin: auto;
 }
 
