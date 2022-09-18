@@ -14,8 +14,9 @@ const result = document.getElementById("result");
 //the variables used for the main logic
 let playerChoice = "";
 let compChoice = "";
+let timeleft;
 //
-const myArray = ["rock", "paper", "scissors"];
+const myArray = [`✊`, `🤚`, `✌`];
 let myRand = 0;
 //
 const pscore = document.getElementById("pscore");
