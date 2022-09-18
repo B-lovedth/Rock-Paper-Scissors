@@ -27,34 +27,70 @@ let mypscore = 0;
 let mycscore = 0;
 let pwin = false;
 let cwin = false;
-
+let rounds = 3;
 //the reset button
 const reset = document.getElementById("reset");
 const replay = document.getElementById("replay");
 //
+
 rock.addEventListener("click", function () {
-  playerChoice = "rock";
-  player.textContent = `YOU:`
-  player.textContent += ` rock`;
-  main();
+  playerChoice = `✊`;
+  // player.innerHTML = `${playerChoice}`
+  timeOut();
 });
 paper.addEventListener("click", function () {
-  playerChoice = "paper";
-  player.textContent = `YOU:`
-  player.textContent += ` paper`;
-  main();
+  playerChoice = `🤚`;
+  // player.innerHTML = `${playerChoice}`
+  timeOut();
 });
 scissors.addEventListener("click", function () {
-  playerChoice = "scissors";
-  player.textContent = `YOU:`
-  player.textContent += ` scissors`;
-  main();
+  playerChoice = `✌`;
+  // player.innerHTML = `${playerChoice}`
+  timeOut();
 });
 
+const timeOut = () => {
+  rounds -= 1;
+  if (rounds >= 0) {
+    timeleft = 3;
+    console.log(rounds);
+    player.innerHTML = "";
+    computer.innerHTML = "";
+    result.textContent = "";
+    game.innerHTML = '';
+    let downloadTimer = setInterval(function () {
+      if (timeleft < 1) {
+        clearInterval(downloadTimer);
+        player.innerHTML = `${playerChoice}`;
+        count.textContent = " ";
+        console.log(count);
+        main();
+        rock.disabled = false;
+        paper.disabled = false;
+        scissors.disabled = false;
+      } else {
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+        count.textContent = timeleft;
+        timeleft -= 1;
+      }
+    }, 1000);
+  } else {
+    check();
+    let _confirm = confirm("Play new round?");
+    if (_confirm) {
+      location.reload();
+    } else {
+      alert("Ok!, bye.");
+      window.close();
+    }
+  }
+};
 const main = () => {
   randomNum();
   compChoice = myArray[myRand];
-  computer.textContent = `COMPUTER: ${compChoice}`;
+  computer.innerHTML = `${compChoice}`;
   mainLogic();
 };
 // generates random number from 0 - 2
@@ -64,28 +100,15 @@ const randomNum = () => {
 };
 
 const mainLogic = () => {
-  // playerChoice === compChoice
-  //   ? (result.textContent = `Its a Tie!`)
-  //   : playerChoice === "rock" && compChoice === "paper"
-  //   ? (result.textContent = `Computer Wins!`)
-  //   : playerChoice === "paper" && compChoice === "scissors"
-  //   ? (result.textContent = `Computer Wins!`)
-  //   : playerChoice === "scissors" && compChoice === "rock"
-  //   ? (result.textContent = `Computer wins!`)
-  //   : (result.textContent = `You win!`);
   if (playerChoice === compChoice) {
     result.textContent = `Its a Tie!`;
     pwin = false;
     cwin = false;
-  } else if (playerChoice === "rock" && compChoice === "paper") {
-    result.textContent = `Computer Wins!`;
-    pwin = false;
-    cwin = true;
-  } else if (playerChoice === "paper" && compChoice === "scissors") {
-    result.textContent = `Computer Wins!`;
-    pwin = false;
-    cwin = true;
-  } else if (playerChoice === "scissors" && compChoice === "rock") {
+  } else if (
+    (playerChoice === "✊" && compChoice === "🤚") ||
+    (playerChoice === "🤚" && compChoice === "✌") ||
+    (playerChoice === "✌" && compChoice === "✊")
+  ) {
     result.textContent = `Computer Wins!`;
     pwin = false;
     cwin = true;
@@ -99,24 +122,25 @@ const mainLogic = () => {
 function win() {
   if (pwin === false && cwin === true) {
     mycscore += 1;
-    cscore.textContent = `Computer: ${mycscore}`;
-    console.log("Computer wins");
+    cscore.textContent = `Logik: ${mycscore}`;
+    game.innerHTML = `${compChoice} beats ${playerChoice}`
   } else if (pwin === true && cwin === false) {
     mypscore++;
     pscore.textContent = `You: ${mypscore}`;
-    console.log("you win");
+    game.innerHTML = `${playerChoice} beats ${compChoice}`;
   } else if (pwin === false && cwin === false) {
     ties++;
     tie.textContent = `Ties: ${ties}`;
+    game.innerHTML =`🙃`
   }
 }
-
-replay.addEventListener("click", function () {
-  player.textContent = `YOU:`;
-  computer.textContent = `COMPUTER:`;
-  result.textContent = ``;
-});
 
 reset.addEventListener("click", function () {
   location.reload();
 });
+
+function check() {
+  if (mypscore > mycscore) {
+    alert(`Yay! , You won this round ☺.`);
+  } else alert("Computer Won this round🙃");
+}
