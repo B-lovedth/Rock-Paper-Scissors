@@ -1,9 +1,10 @@
 /** @format */
 
-
 //the variables assigned to the player choices in the DOM
 const player = document.getElementById("player");
 const computer = document.getElementById("computer");
+const count = document.getElementById("count");
+const game = document.getElementById('game')
 //the variables assigned to the buttons
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
