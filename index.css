@@ -72,10 +72,11 @@ small {
   top: 100%;
 }
 header {
-  font-size: 40px;
-  font-weight: bold;
-  background-color: beige;
-  color: rgb(1, 90, 1);
+  font-size: 3rem;
+  width: 60%;
+  margin: 0 auto;
+  font-weight: 700;
+  color: rgb(255 182 91);
   letter-spacing: 5px;
   border-radius: 20px;
   transition: all 1000ms;
