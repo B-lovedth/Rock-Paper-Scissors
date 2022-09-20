@@ -27,6 +27,11 @@ body::before{
 }
 .content {
   margin: 5rem 0;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+    justify-content: center;
+    height:100vh;
 }
 .main {
   margin: auto;
@@ -153,14 +158,16 @@ header {
 }
 .player button:hover{
     color:#fff;
-    transition: 1s ease ;
+    transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 0.2s ease-out;
     animation: bounce 0.5s linear;
 }
 .player button:active .emo, 
 .player button:focus .emo{
   filter: grayscale(0) contrast(3);
   transform:translateY(-25%) rotate(30deg) scale(1.5);
-  transition: 1s ease;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s ease-out;
 }
 @keyframes bounce {
   0%{transform: translateY(0%);}
@@ -170,3 +177,25 @@ header {
   100%{transform: translateY(0%);}
 }
 
+@media(max-width:1000px){
+  .play{
+    margin:0;
+  }
+  .player{
+    width: 100%;
+    max-width:100%;
+  }
+.player button {
+  font-size:6rem;
+}
+.player button .emo {
+  font-size:6rem;
+}
+.main {
+  margin: 1rem auto;
+  width: 70%;
+}
+#count{
+  font-size:17rem;
+}
+}
