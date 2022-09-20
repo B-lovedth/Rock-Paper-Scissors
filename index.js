@@ -81,9 +81,9 @@ const timeOut = () => {
     let _confirm = confirm("Play new round?");
     if (_confirm) {
       location.reload();
-      rock.disabled = false;
-      paper.disabled = false;
-      scissors.disabled = false;
+      rock.disabled = true;
+      paper.disabled = true;
+      scissors.disabled = true;
     } else {
       alert("Ok!, bye.");
       window.close();
