@@ -18,10 +18,10 @@ body::before{
   font-size:6rem;
   font-weight: 900;
   text-shadow: none;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #565656;
   -webkit-text-stroke: 5px #000;
   letter-spacing: 1rem;
-  filter: opacity(0.35);
+  filter: opacity(0.8);
   text-transform: uppercase;
   z-index: -1;
 }
@@ -61,6 +61,11 @@ body::before{
   width: 30%;
 }
 .render h3 {
+  color: #333;
+}
+div#ties {
+  text-transform: uppercase;
+  letter-spacing: 3px;
   color: #333;
 }
 #result{
@@ -180,6 +185,8 @@ header {
 @media(max-width:1000px){
   .play{
     margin:0;
+    height: 13rem;
+    width: 18rem;
   }
   .player{
     width: 100%;
@@ -195,10 +202,24 @@ header {
   margin: 1rem auto;
   width: 70%;
 }
+#result{
+  width: 60%;
+    margin: -6rem auto 3rem;
+    background: #333;
+    border-radius: 20px;
+}
 #count{
   font-size:17rem;
 }
-header{
-  display: block;
+p#game {
+  width: 20%;
+  margin: 1rem auto;
+  font-size: 2rem;
+  background: #5e3f28;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+body::before {
+  top: 0 !important;;
 }
 }
