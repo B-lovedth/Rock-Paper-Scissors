@@ -26,7 +26,7 @@ body::before{
   z-index: -1;
 }
 .content {
-  margin: 5rem 0;
+  margin: 0;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +78,6 @@ small {
 }
 header {
   font-size: 3rem;
-  width: 60%;
   margin: 0 auto;
   font-weight: 700;
   color: rgb(255 182 91);
@@ -86,7 +85,7 @@ header {
   border-radius: 20px;
   transition: all 1000ms;
   background: #333;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #333333c7;
   -webkit-background-clip: text;
   background-size: 200% 200%;
   animation:leftright 20s infinite linear;
@@ -197,5 +196,8 @@ header {
 }
 #count{
   font-size:17rem;
+}
+header{
+  display: block;
 }
 }
