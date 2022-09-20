@@ -140,7 +140,9 @@ reset.addEventListener("click", function () {
 });
 
 function check() {
-  if (mypscore > mycscore) {
+  if (ties > (mypscore + mycscore || ties+mypscore+mycscore===3)) {
+    alert('This round ended in a Tie 🤝')
+  }else if (mypscore > mycscore) {
     alert(`Yay! , You won this round ☺.`);
-  } else alert("Computer Won this round🙃");
+  }else if(mycscore>mypscore) alert("Computer Won this round🙃");
 }
