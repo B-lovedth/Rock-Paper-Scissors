@@ -75,7 +75,7 @@ const timeOut = () => {
         count.textContent = timeleft;
         timeleft -= 1;
       }
-    }, 1000);
+    }, 500);
   } else {
     check();
     let _confirm = confirm("Play new round?");
@@ -112,7 +112,7 @@ const mainLogic = () => {
     (playerChoice === "🤚" && compChoice === "✌") ||
     (playerChoice === "✌" && compChoice === "✊")
   ) {
-    result.textContent = `Computer Wins!`;
+    result.textContent = `Logik Wins!`;
     pwin = false;
     cwin = true;
   } else {
