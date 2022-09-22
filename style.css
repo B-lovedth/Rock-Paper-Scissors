@@ -68,3 +68,15 @@
         -webkit-text-stroke: 0.3px #333;
     }
 }
+@media(max-width:375px){
+    div#ties{
+        font-size: 1.5rem;
+    }
+    p#game{
+        width: 34%;
+        transform: translateX(80%);
+    }
+        .player button .emo {
+            font-size: 5rem;
+        }
+}
