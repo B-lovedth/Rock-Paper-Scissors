@@ -68,7 +68,7 @@
         -webkit-text-stroke: 0.3px #333;
     }
 }
-@media(max-width:375px){
+@media(max-width:400px){
     div#ties{
         font-size: 1.5rem;
     }
@@ -78,5 +78,8 @@
     }
         .player button .emo {
             font-size: 5rem;
+        }
+        #count{
+            font-size: 6rem;
         }
 }
