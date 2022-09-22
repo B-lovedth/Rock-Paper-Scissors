@@ -1,0 +1,70 @@
+@media(max-width:960px) {
+    .play {
+        margin: 0;
+        height:10rem;
+        width: 9rem;
+        font-size:7rem;
+    }
+
+    .player {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .player button {
+        font-size: 6rem;
+    }
+
+    .player button .emo {
+        font-size: 6rem;
+    }
+
+    .main {
+        margin:0;
+        width: 70%;
+    }
+    .render{
+        margin-top:4rem;
+    }
+    #result {
+        width: 60%;
+        margin: -1rem auto 0rem;
+        background: #333;
+        border-radius: 20px;
+        font-size:2rem;
+    }
+
+    #count {
+        font-size: 9rem;
+    }
+
+    p#game {
+        width: 21%;
+        position: absolute;
+        bottom: 0;
+        transform: translateX(150%);
+        margin: 1rem auto;
+        font-size: 1rem;
+        background: #5e3f28;
+        border-radius: 20px;
+        padding: 0.5rem;
+    }
+    div#ties {
+        text-transform: capitalize;
+        color: #fffefe;
+    }
+
+    body::before {
+        top: 0;
+        filter: opacity(0.8);
+        font-size:2rem;
+    }
+    .render-lf,.render-rg{
+        width:auto;
+    }
+    .render h3{
+        font-size: smaller;
+        color: #ffffff;
+        -webkit-text-stroke: 0.3px #333;
+    }
+}
