@@ -84,7 +84,7 @@ p#game {
   width: 20%;
   position: absolute;
   bottom: 0;
-  transform: translateX(50%);
+  transform: translateX(185%);
   margin: 1rem auto;
   font-size: 2rem;
   background: #5e3f28;
